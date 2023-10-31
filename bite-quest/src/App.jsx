@@ -1,8 +1,17 @@
+
+import Cadastro from "./pages/Cadastro/cadastro"
+import GlobalStyle from "./styles/global"
+
+
+
 function App() {
 
   return (
     <>
-    bitequest
+    <GlobalStyle/>
+    
+    <Cadastro/>
+
     </>
   )
 }
