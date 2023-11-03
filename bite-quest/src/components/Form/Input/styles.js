@@ -11,6 +11,7 @@ flex-direction: column;
 justify-content: center;
 align-items: start;
 width: 80%;
+margin-top: 20px;
 
 
 
@@ -18,7 +19,7 @@ width: 80%;
 
 export const Labelform = styled.label`
 color: white;
-font-size: 14px;
+font-size: 12px;
 
 
 `
@@ -30,10 +31,17 @@ border-top-left-radius: 10px;
 border-top-right-radius: 10px;
 outline: none;
 border-bottom: solid 1px whitesmoke;
-padding-left: 10px ;
-padding-top: 20px;
+padding: 10px 0px 10px 0px;
 color: whitesmoke;
 height: 40px;
 background-color: transparent;
 font-size: 16px;
+
+  &:focus {
+    background-color: #242020;
+    transition: all 2s linear;
+
+  }
+
+
 `

@@ -6,9 +6,10 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     border: 0;
     box-sizing: border-box;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    font-family: 'Poppins', sans-serif;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);   
+    font-family: 'Montserrat', sans-serif;
     text-decoration: none;
+
   }
 
   body {

@@ -1,14 +1,15 @@
 
-import * as S from './inputform';
+import * as S from './styles';
 
 export const InputForm = (props) => {
  
+
 
   return (
     <>
 
       <S.Containinput>
-        <S.Labelform>{props.texto}</S.Labelform>
+        <S.Labelform>{props.text}</S.Labelform>
         <S.Inputform/>
       </S.Containinput>
 
