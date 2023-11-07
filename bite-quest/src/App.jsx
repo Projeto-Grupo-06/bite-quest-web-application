@@ -1,20 +1,23 @@
 
+import React from 'react';
+import GlobalStyles from './styles/global';
+import HomePage from './pages/HomePage/HomePage';
 import Cadastro from "./pages/Cadastro/cadastro"
 import Login from "./pages/Login/login"
-import GlobalStyle from "./styles/global"
-
 
 
 function App() {
-
   return (
     <>
-    <GlobalStyle/>
-    
-    <Login/>
 
+      <GlobalStyles />
+      {/* <Route path="/" exact element={HomePage} /> */}
+      {/* <Route path="/cadastro" element={Cadastro} /> */}
+      <HomePage /> 
+        // <Cadastro />
+//       <Login/>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

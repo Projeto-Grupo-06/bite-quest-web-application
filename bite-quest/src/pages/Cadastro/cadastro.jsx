@@ -18,32 +18,26 @@ function cadastro() {
             <S.Container>
                 <S.Divleft>
 
-                <S.Logo src={LogoBlack} />
+                    <S.Logo src={LogoBlack} />
 
                     <S.Form>
-                     <ButtonsReplacements backgrounColorOne="#FCA311" textone="CADASTRO" backgrounColorTwo="whitesmoke" textTwo="LOGIN" />
+                        <ButtonsReplacements backgrounColorOne="#FCA311" textone="CADASTRO" backgrounColorTwo="whitesmoke" textTwo="LOGIN" />
 
                         <InputForm text="NOME" />
                         <InputForm text="EMAIL" />
                         <InputForm text="SENHA" />
-                        <InputForm text="CONFORMAÇÃO DE SENHA" />
+                        <InputForm text="CONFIRMAR SENHA" />
 
                         <S.DivAdicionar>
                             <S.Check />
                             <S.TextReference>Desejo adicionar meu restaurante</S.TextReference>
                         </S.DivAdicionar>
-
-
-
-
-
-                        <ButtonForm height="58px" width="80%" text="Cadastrar" textColor="whitesmoke"  backgroundColor="#FCA311" />
+                        <ButtonForm height="8%" width="80%" text="Cadastrar" textColor="whitesmoke" backgroundColor="#FCA311" fontSize="1.7rem" />
                     </S.Form>
                 </S.Divleft>
                 <S.Divright></S.Divright>
             </S.Container>
         </>
-
     )
 }
 

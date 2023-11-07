@@ -8,9 +8,6 @@ width: 80%;
 border-radius: 40px;
 overflow: hidden;
 cursor: pointer;
-margin-bottom: 40px;
-cursor: pointer;
-
 `
 
 
