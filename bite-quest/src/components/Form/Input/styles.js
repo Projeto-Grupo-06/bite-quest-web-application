@@ -12,9 +12,6 @@ justify-content: center;
 align-items: start;
 width: 80%;
 margin-top: 20px;
-
-
-
 `
 
 export const Labelform = styled.label`
@@ -39,6 +36,4 @@ font-size: 16px;
     transition: all 2s linear;
 
   }
-
-
 `

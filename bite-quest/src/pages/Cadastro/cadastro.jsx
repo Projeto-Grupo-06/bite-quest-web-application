@@ -32,18 +32,12 @@ function cadastro() {
                             <S.Check />
                             <S.TextReference>Desejo adicionar meu restaurante</S.TextReference>
                         </S.DivAdicionar>
-
-
-
-
-
                         <ButtonForm height="8%" width="80%" text="Cadastrar" textColor="whitesmoke" backgroundColor="#FCA311" fontSize="1.7rem" />
                     </S.Form>
                 </S.Divleft>
                 <S.Divright></S.Divright>
             </S.Container>
         </>
-
     )
 }
 
