@@ -16,7 +16,9 @@ margin-top: 20px;
 
 export const Labelform = styled.label`
 color: white;
-font-size: 1.3rem;
+/**font-size: 1.3rem;**/
+
+font-size: 14px;
 `
 
 export const Inputform = styled.input`
@@ -29,7 +31,7 @@ border-bottom: solid 1px whitesmoke;
 color: whitesmoke;
 height: 40px;
 background-color: transparent;
-font-size: 16px;
+font-size: 18px;
 
   &:focus {
     background-color: #242020;

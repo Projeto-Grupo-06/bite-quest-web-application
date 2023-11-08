@@ -9,6 +9,7 @@ width: 100vw;
 background-color: black;
 color: white;
 display: flex;
+
 `
 
 export const Divleft = styled.div`
@@ -84,3 +85,4 @@ margin-left:10px ;
 
 
 `
+

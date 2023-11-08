@@ -1,9 +1,13 @@
 /* eslint-disable no-irregular-whitespace */
 import * as S from "./styles"
+import { useNavigate } from 'react-router-dom';
 import LogoBlack from "../../assets/LogoBlack.png"
 import ButtonForm from "../../components/Form/buttons/ButtonForm/ButtonForm"
 
 function HomePage() {
+
+   const navigate = useNavigate();
+
   return (
     <>
       <S.NavBar>
@@ -19,10 +23,10 @@ function HomePage() {
         <S.Wrapper>
           <S.WrapperUl>
             <li>
-              <ButtonForm height="5.5vh" width="10vw" text="Entrar" textColor="black" backgroundColor="white" fontSize="1.6rem" />
+              <ButtonForm onClick={() => navigate('/Login')} height="5.5vh" width="10vw" text="Entrar" colorDoText="black" fundoColor="white" marginTop="0px" fontSize="1rem" />
             </li>
             <li>
-              <ButtonForm height="5.5vh" width="10vw" text="Cadastre-se" textColor="whitesmoke" backgroundColor="#FCA311" fontSize="1.6rem" />
+              <ButtonForm onClick={() => navigate('/Cadastro')} height="5.5vh" width="10vw" text="Cadastre-se" colorDoText="whitesmoke" fundoColor="#FCA311" marginTop="0px" fontSize="1rem" />
             </li>
           </S.WrapperUl>
         </S.Wrapper>

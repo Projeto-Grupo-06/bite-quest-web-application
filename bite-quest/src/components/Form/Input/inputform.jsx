@@ -10,7 +10,7 @@ export const InputForm = (props) => {
 
       <S.Containinput>
         <S.Labelform>{props.text}</S.Labelform>
-        <S.Inputform/>
+        <S.Inputform onChange={props.onChange}/>
       </S.Containinput>
 
 
