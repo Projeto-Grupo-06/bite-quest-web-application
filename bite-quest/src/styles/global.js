@@ -8,9 +8,9 @@ const GlobalStyles = createGlobalStyle`
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 
 
-    /**font-family: 'Bebas Neue', sans-serif;  **/
+    font-family: 'Bebas Neue', sans-serif; 
 
-    font-family: 'Montserrat', sans-serif;
+
 
     
     text-decoration: none;

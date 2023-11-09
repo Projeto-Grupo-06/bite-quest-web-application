@@ -16,9 +16,9 @@ function App() {
 
         <Routes>
 
-          <Route path ="/"  element={<HomePage />}/>
-          <Route path="/Cadastro"  element={<Cadastro />}/>
-          <Route path="/Login"  element={<Login />}/>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/Cadastro" element={<Cadastro />} />
+          <Route path="/Login" element={<Login />} />
 
         </Routes>
 

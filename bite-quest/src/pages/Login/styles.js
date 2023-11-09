@@ -96,6 +96,7 @@ color: #0090C3;
 font-size: 12px;
 font-weight: bold;
 margin-left:10px ;
+font-family: 'Montserrat', sans-serif;
 
   &:hover {
     text-decoration: underline;

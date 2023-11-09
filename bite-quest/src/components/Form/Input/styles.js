@@ -16,6 +16,7 @@ margin-top: 20px;
 
 export const Labelform = styled.label`
 color: white;
+font-family: 'Montserrat', sans-serif;
 /**font-size: 1.3rem;**/
 
 font-size: 14px;

@@ -6,7 +6,7 @@ import ButtonForm from "../../components/Form/buttons/ButtonForm/ButtonForm"
 
 function HomePage() {
 
-   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <>
