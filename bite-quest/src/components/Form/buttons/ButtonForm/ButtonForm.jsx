@@ -7,12 +7,15 @@ function ButtonForm(props) {
   return (
     <>
       <S.Buttonformsubmit
+        onClick={props.onClick}
         height={props.height}
         width={props.width}
-        textColor={props.textColor}
-        backgroundColor={props.backgroundColor}
+        colorDoText={props.colorDoText}
+        fundoColor={props.fundoColor}
+         marginTop={props.marginTop}
         fontSize={props.fontSize}
       >
+
         {props.text}
       </S.Buttonformsubmit>
 
