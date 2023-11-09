@@ -80,14 +80,15 @@ background-position: center center;
 background-size: cover;
 display: flex;
 align-items: center;
+justify-content: space-evenly;
 `
-export const TextRecommendations = styled.div`
-  height: 80%;
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+export const BoxRecommendations = styled.div`
+    height: 65%;
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
 `
 
 export const Title = styled.h1`
@@ -97,24 +98,20 @@ font-size: 5rem;
 font-weight: 100;
 `
 
-export const PhirstP = styled.p`
+export const PhirstP = styled.div`
 color: white;
 font-size: 2rem;
-`
-
-export const SecondP = styled.p`
-color: white;
-font-size: 2rem;
+width: 70%;
 `
 
 export const RestaurantRecomendations = styled.div`
 height: 80%;
-width: 50%;
-display: grid;
-grid-template-rows: repeat(2, 1fr);
-grid-template-columns: repeat(2, 1fr);
-gap: 10px; 
-justify-content: center; 
-align-content: center; 
+    width: 45%;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    align-items: center;
+    justify-items: center;
 `
 
