@@ -1,7 +1,7 @@
 import React from 'react'
 
 import * as S from "./styles"
-import ButtonForm from '../../components/Form/buttons/ButtonForm/buttonform';
+import ButtonForm from '../../components/Form/buttons/ButtonForm/ButtonForm';
 import InputForm from '../../components/Form/Input/inputform';
 import ButtonsReplacements from '../../components/Form/buttons/ButtonsReplacement/ButtonsReplacements';
 

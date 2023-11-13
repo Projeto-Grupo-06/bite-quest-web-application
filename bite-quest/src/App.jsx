@@ -14,8 +14,6 @@ function App() {
       {/* <Route path="/" exact element={HomePage} /> */}
       {/* <Route path="/cadastro" element={Cadastro} /> */}
       <HomePage /> 
-        // <Cadastro />
-//       <Login/>
     </>
   );
 }

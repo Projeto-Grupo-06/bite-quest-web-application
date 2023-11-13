@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import BannerBiteQuest from "../../assets/Bitequest-banner.png"
 import ImgRecommendations from "../../assets/recomendacoes.png"
+import texturaPromotional from "../../assets/texturaPromotional.png"
+import backgroundParticipantes from "../../assets/backgroundParticipantes.png"
+import backgroundfooter from "../../assets/backgroundfooter.png"
 
 export const NavBar = styled.nav`
 display: flex;
@@ -114,4 +117,151 @@ height: 80%;
     align-items: center;
     justify-items: center;
 `
+
+
+
+
+export const sectionPromotional = styled.section`
+height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    background-image: url(${texturaPromotional});
+`
+
+
+export const sectionPromotionalcontainer = styled.div`
+    height: 75vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: transparent;
+`
+
+export const imagesTextPromotional = styled.img`
+width: 40%;
+`
+
+export const imgpromocional = styled.img`
+height: 100%;
+`
+
+
+
+
+
+
+export const sectionParticipants = styled.section`
+    height: 130vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    background-image: url(${backgroundParticipantes});
+    background-size: cover;
+`
+
+export const divParticipantsdesc = styled.div`
+    margin-top: 16%;
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+   justify-content: center;
+    background-color: transparent;
+`
+
+export const descPart = styled.p`
+    color: whitesmoke;
+    width: 80%;
+    font-size: 1.6rem;
+    background-color: transparent;
+`
+
+export const divParticipantsimg = styled.div`
+    margin-top: 16%;
+    height: 60vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    background-color: transparent;
+`
+
+
+export const sectionFooter = styled.footer`
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-image: url(${backgroundfooter});
+    background-size: cover;
+`
+export const divFootercenter = styled.div`
+    margin-top: 5%;
+    height: 60vh;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    background-color: transparent;
+`
+
+export const textFooter = styled.p`
+    color: whitesmoke;
+    font-size: 1.4rem;
+    margin-top: 6%; 
+`
+export const infosdesc = styled.ul`
+color: whitesmoke;
+margin-top: 8%;
+width: 76%;
+display: flex;
+justify-content: space-around;
+align-items: center;
+list-style: none;
+background-color: blue;
+border-bottom: solid 1px whitesmoke;
+`
+
+export const linkTag = styled.a`
+color: whitesmoke;
+
+width: 100%;
+height: 100%;
+background-color: red;
+
+`
+
+export const infosdescimg = styled.ul`
+color: whitesmoke;
+margin-top: 4%;
+width: 20%;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+list-style: none;
+background-color: transparent;
+`
+
+export const li = styled.li`
+
+text-align: center;
+font-size: 1.4rem;
+background-color: grey;
+width: 33%;
+`
+
+
+
+export const descimg = styled.img`
+background-color: transparent;
+width: 50%;
+cursor: pointer;
+`
+
+
+
 
