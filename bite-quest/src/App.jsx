@@ -10,7 +10,7 @@ import Login from "./pages/Login/login"
 function App() {
   return (
     <>
-
+   <GlobalStyles />
 
       <Router>
 
@@ -26,7 +26,6 @@ function App() {
 
 
 
-      <GlobalStyles />
     </>
   );
 }
