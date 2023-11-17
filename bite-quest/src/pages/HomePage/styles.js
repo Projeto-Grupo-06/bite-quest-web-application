@@ -26,6 +26,7 @@ export const Menu = styled.div`
 display: flex;
 align-items: center;
 color: white;
+
 `
 
 export const MenuUl = styled.ul`

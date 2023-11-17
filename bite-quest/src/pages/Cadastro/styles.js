@@ -9,6 +9,7 @@ width: 100vw;
 background-color: black;
 color: white;
 display: flex;
+
 `
 
 export const Divleft = styled.div`
@@ -77,6 +78,7 @@ color: #0090C3;
 font-size: 12px;
 font-weight: bold;
 margin-left:10px ;
+font-family: 'Montserrat', sans-serif;
 
   &:hover {
     text-decoration: underline;
@@ -84,3 +86,4 @@ margin-left:10px ;
 
 
 `
+

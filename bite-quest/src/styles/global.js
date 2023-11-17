@@ -6,7 +6,13 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     border: 0;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
-    font-family: 'Bebas Neue', sans-serif;
+
+
+    font-family: 'Bebas Neue', sans-serif; 
+
+
+
+    
     text-decoration: none;
   }
 
