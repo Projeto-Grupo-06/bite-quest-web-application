@@ -15,7 +15,7 @@ export const ButtonCad = styled.button`
 height: 100%;
 width: 50%;
 color: blue;
-background-color: ${props => props.backgrounColorOne};
+background-color: ${props => props.backgrouncolorone};
 border-radius: 40px;
 color: ${props => props.fundoColorOne === '#EFEFEF' ? 'black' : 'black'};;
 font-weight: bold;
@@ -37,7 +37,7 @@ cursor: pointer;
 export const ButtonLog = styled.button`
 height: 100%;
 width: 50%;
-background-color: ${props => props.backgrounColorTwo};
+background-color: ${props => props.backgrouncolortwo};
 border-radius: 40px;
 color: ${props => props.backgroundCcolorttwo === 'black' ? 'white' : props.backgroundCcolorttwo};
 font-weight: bold;

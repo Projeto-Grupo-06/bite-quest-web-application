@@ -3,7 +3,7 @@ import BackgroundImage from '../../assets/backgrounimage.png';
 
 
 
-export const Container = styled.div`
+export const Container = styled.main`
 height: 100vh;
 width: 100vw;
 background-color: black;
@@ -40,7 +40,7 @@ background-size: cover;
 `
 
 
-export const Form = styled.div`
+export const Form = styled.form`
 height: 80vh;
 width: 25vw;
 background-color: transparent;

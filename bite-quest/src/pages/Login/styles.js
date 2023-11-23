@@ -43,7 +43,7 @@ background-color: #1a1a1a;
 `
 
 
-export const Form = styled.div`
+export const Form = styled.form`
 height: 90vh;
 width: 30vw;
 background-color: transparent;

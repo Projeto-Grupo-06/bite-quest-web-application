@@ -12,8 +12,9 @@ function ButtonForm(props) {
         width={props.width}
         colorDoText={props.colorDoText}
         fundoColor={props.fundoColor}
-         marginTop={props.marginTop}
+        marginTop={props.marginTop}
         fontSize={props.fontSize}
+        type={props.type}
       >
 
         {props.text}
