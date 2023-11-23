@@ -1,102 +1,95 @@
-import React from 'react'
-import * as S from "./styles"
-import { useState } from 'react';
+import React, { useState } from 'react';
+import api from '../../api';
+import * as S from './styles';
 import { useNavigate } from 'react-router-dom';
-import ButtonForm from '../../components/Form/buttons/ButtonForm/ButtonForm';
+import LogoBlack from '../../assets/LogoBlack.png';
 import InputForm from '../../components/Form/Input/inputform';
+import ButtonForm from '../../components/Form/buttons/ButtonForm/ButtonForm';
 import ButtonsReplacements from '../../components/Form/buttons/ButtonsReplacement/ButtonsReplacements';
 
-import LogoBlack from "../../assets/LogoBlack.png"
-
-
-
-
-
 function Cadastro() {
-
-    //usando state
-
     const navigate = useNavigate();
-    const [nome, setNome] = useState('');
-    const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
-    const [confirmSenha, setConfirmSenha] = useState('');
+    const [confirmarSenha, setConfirmarSenha] = useState('');
 
+    function cadastrar(e) {
+        e.preventDefault();
 
+        // Validar se as senhas coincidem
+        if (senha !== confirmarSenha) {
+            console.log('As senhas não coincidem.');
+            // Adicione aqui a lógica para lidar com o erro, se necessário.
+            return;
+        }
 
-    //criterios de validação
+        const usuario = {
+            nome: e.target.nome.value,
+            email: e.target.email.value,
+            senha: e.target.senha.value,
+        };
 
-    const validateEmail = (email) => {
-        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(String(email).toLowerCase());
+        api
+            .post(`/usuarios`, usuario)
+            .then((response) => {
+                console.log(response);
+                navigate('/Login');
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     }
-
-    const validateSenha = (senha) => {
-        var re = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
-        return re.test(senha);
-    }
-
-
-    //validando os inputs
-
-    const cadastrar = () => {
-        if (nome.length === 0) {
-            console.log("digite um nome");
-            return;
-        }
-        if (!validateEmail(email)) {
-            console.log("Invalid email");
-            return;
-        }
-        if (!validateSenha(senha)) {
-            console.log("senha invalida");
-            return;
-        }
-        if (senha !== confirmSenha) {
-            console.log("errou a senha");
-            return;
-        }
-        console.log("cadastrado");
-        navigate('/Login');
-    };
-
-
-
 
     return (
-
         <>
             <S.Container>
                 <S.Divleft>
-
                     <S.Logo onClick={() => navigate('/')} src={LogoBlack} />
-
-                    <S.Form>
-                        <ButtonsReplacements backgrounColorOne="#FCA311" textone="CADASTRO" backgrounColorTwo="whitesmoke" textTwo="LOGIN" />
-
-                        <InputForm text="NOME" onChange={e => setNome(e.target.value)} />
-                        <InputForm text="EMAIL" onChange={e => setEmail(e.target.value)} />
-                        <InputForm text="SENHA" onChange={e => setSenha(e.target.value)} />
-                        <InputForm text="CONFIRMAR SENHA" onChange={e => setConfirmSenha(e.target.value)} />
-
+                    <S.Form onSubmit={cadastrar}>
+                        <ButtonsReplacements
+                            backgrouncolorone="black"
+                            textone="CADASTRO"
+                            backgrounColorTwo="whitesmoke"
+                            textTwo="LOGIN"
+                        />
+                        <InputForm
+                            text="NOME"
+                            name="nome"
+                        />
+                        <InputForm
+                            text="EMAIL"
+                            name="email"
+                        />
+                        <InputForm
+                            text="SENHA"
+                            name="senha"
+                            type="password"
+                            onChange={(e) => setSenha(e.target.value)}
+                        />
+                        <InputForm
+                            text="CONFIRMAR SENHA"
+                            type="password"
+                            onChange={(e) => setConfirmarSenha(e.target.value)}
+                        />
                         <S.DivAdicionar>
                             <S.Check />
                             <S.TextReference>Desejo adicionar meu restaurante</S.TextReference>
                         </S.DivAdicionar>
-
-
-
-
-                        <ButtonForm onClick={cadastrar} height="8%" width="80%" text="Cadastrar" colorDoText="whitesmoke" fundoColor="#FCA311" marginTop="40px" fontSize="1.3rem" />
-
-
-
+                        <ButtonForm
+                            type="submit"
+                            height="8%"
+                            width="80%"
+                            text="Cadastrar"
+                            colorDoText="whitesmoke"
+                            fundoColor="#FCA311"
+                            marginTop="40px"
+                            fontSize="1.3rem"
+                        />
                     </S.Form>
                 </S.Divleft>
                 <S.Divright></S.Divright>
             </S.Container>
         </>
-    )
+    );
 }
 
 export default Cadastro;
