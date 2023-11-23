@@ -1,5 +1,7 @@
 import React from 'react'
 import * as S from "./styles"
+
+
 import LogoBlack from "../../assets/LogoBlack.png"
 import ButtonForm from "../../components/Form/buttons/ButtonForm/ButtonForm"
 import CardRestaurant from "../../components/CardRestaurant/cardRestaurant"
@@ -20,11 +22,15 @@ import lucas from '../../assets/Participantes/lucas.png'
 import vitor from '../../assets/Participantes/vitor.png'
 import vitoria from '../../assets/Participantes/vitoria.png'
 import dennys from '../../assets/Participantes/dennys.png'
+import { useNavigate } from 'react-router-dom'
 
 
 
 
 function HomePage() {
+
+    const navigate = useNavigate();
+
   return (
     <>
       <S.NavBar>
@@ -40,10 +46,10 @@ function HomePage() {
         <S.Wrapper>
           <S.WrapperUl>
             <li>
-              <ButtonForm height="5.5vh" width="10vw" text="Entrar" textColor="black" backgroundColor="white" fontSize="1.6rem" />
+              <ButtonForm height="5.5vh" width="10vw" text="Entrar" textColor="black" fundoColor="white" fontSize="1.6rem" onClick={() => navigate('/Login')} />
             </li>
             <li>
-              <ButtonForm height="5.5vh" width="10vw" text="Cadastre-se" textColor="whitesmoke" backgroundColor="#FCA311" fontSize="1.6rem" />
+              <ButtonForm height="5.5vh" width="10vw" text="Cadastre-se" textColor="whitesmoke" fundoColor="#FCA311" fontSize="1.6rem" onClick={() => navigate('/Cadastro')} />
             </li>
           </S.WrapperUl>
         </S.Wrapper>

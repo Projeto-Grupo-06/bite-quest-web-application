@@ -46,7 +46,7 @@ function Cadastro() {
                     <S.Logo onClick={() => navigate('/')} src={LogoBlack} />
                     <S.Form onSubmit={cadastrar}>
                         <ButtonsReplacements
-                            backgrouncolorone="black"
+                            backgrounColorOne="#FCA311"
                             textone="CADASTRO"
                             backgrounColorTwo="whitesmoke"
                             textTwo="LOGIN"

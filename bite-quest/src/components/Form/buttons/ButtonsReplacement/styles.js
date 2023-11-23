@@ -8,6 +8,7 @@ width: 80%;
 border-radius: 40px;
 overflow: hidden;
 cursor: pointer;
+margin-bottom: 10%;
 `
 
 
@@ -15,9 +16,9 @@ export const ButtonCad = styled.button`
 height: 100%;
 width: 50%;
 color: blue;
-background-color: ${props => props.backgrouncolorone};
+background-color: ${props => props.backgrounColorOne};
 border-radius: 40px;
-color: ${props => props.fundoColorOne === '#EFEFEF' ? 'black' : 'black'};;
+color: ${props => props.backgrounColorOne === '#FCA311' ? 'whitesmoke' : 'black'};;
 font-weight: bold;
 font-size: 18px;
 cursor: pointer;
@@ -37,9 +38,9 @@ cursor: pointer;
 export const ButtonLog = styled.button`
 height: 100%;
 width: 50%;
-background-color: ${props => props.backgrouncolortwo};
+background-color: ${props => props.backgrounColorTwo};
 border-radius: 40px;
-color: ${props => props.backgroundCcolorttwo === 'black' ? 'white' : props.backgroundCcolorttwo};
+color: ${props => props.backgrounColorTwo === 'whitesmoke' ? 'black' : "whitesmoke"};
 font-weight: bold;
 font-size: 18px;
 cursor: pointer;
