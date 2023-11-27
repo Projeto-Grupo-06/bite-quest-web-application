@@ -223,16 +223,15 @@ display: flex;
 justify-content: space-around;
 align-items: center;
 list-style: none;
-background-color: blue;
+background-color: transparent;
 border-bottom: solid 1px whitesmoke;
 `
 
 export const linkTag = styled.a`
 color: whitesmoke;
-
 width: 100%;
 height: 100%;
-background-color: red;
+background-color: transparent;
 
 `
 
@@ -251,7 +250,7 @@ export const li = styled.li`
 
 text-align: center;
 font-size: 1.4rem;
-background-color: grey;
+background-color: transparent;
 width: 33%;
 `
 

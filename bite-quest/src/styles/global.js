@@ -20,6 +20,7 @@ const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
   }
 
+<<<<<<< HEAD
   .classdeErro {
     border-bottom: 1px solid red;
   }
@@ -41,6 +42,11 @@ const GlobalStyles = createGlobalStyle`
     transition: all 2s linear;
     }
   }
+=======
+
+
+
+>>>>>>> a5bd10241f89367c99ffcf83f07578ff83692dd7
 `
 
 export default GlobalStyles;

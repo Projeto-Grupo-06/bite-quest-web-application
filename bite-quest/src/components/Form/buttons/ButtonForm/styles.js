@@ -11,10 +11,6 @@ export const Buttonformsubmit = styled.button`
   font-weight: bold; 
   cursor: pointer;
 
-  &:hover {
-    background-color: #F29C11;
-    transition: all 0.2s linear ;
-  }
 `;
 
 
