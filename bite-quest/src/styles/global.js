@@ -19,5 +19,28 @@ const GlobalStyles = createGlobalStyle`
   body {
     overflow-x: hidden;
   }
+
+  .classdeErro {
+    border-bottom: 1px solid red;
+  }
+
+  input {
+    width: 80%;
+    border:none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    outline: none;
+    border-bottom: solid 1px whitesmoke;
+    color: whitesmoke;
+    height: 40px;
+    background-color: transparent;
+    font-size: 18px;
+
+  &:focus {
+    background-color: #242020;
+    transition: all 2s linear;
+    }
+  }
 `
+
 export default GlobalStyles;

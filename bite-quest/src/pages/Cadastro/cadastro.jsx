@@ -1,79 +1,80 @@
-import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import api from '../../api';
 import * as S from './styles';
 import { useNavigate } from 'react-router-dom';
 import LogoBlack from '../../assets/LogoBlack.png';
-import InputForm from '../../components/Form/Input/inputform';
+import { inputSomenteTexto, inputSemEspaco } from '../../utils/formatadores';
 import ButtonForm from '../../components/Form/buttons/ButtonForm/ButtonForm';
 import ButtonsReplacements from '../../components/Form/buttons/ButtonsReplacement/ButtonsReplacements';
 
 function Cadastro() {
     const navigate = useNavigate();
-    const [senha, setSenha] = useState('');
-    const [confirmarSenha, setConfirmarSenha] = useState('');
+    const { register, handleSubmit, formState: { errors }, watch } = useForm();
 
-    function cadastrar(e) {
-        e.preventDefault();
+    const onSubmit = (data) => {
 
-        // Validar se as senhas coincidem
-        if (senha !== confirmarSenha) {
-            console.log('As senhas não coincidem.');
-            // Adicione aqui a lógica para lidar com o erro, se necessário.
-            return;
-        }
-
-        const usuario = {
-            nome: e.target.nome.value,
-            email: e.target.email.value,
-            senha: e.target.senha.value,
-        };
-
-        api
-            .post(`/usuarios`, usuario)
+        api.post(`/usuarios`, data)
             .then((response) => {
                 console.log(response);
                 navigate('/Login');
             })
             .catch((error) => {
+                console.log("error");
                 console.log(error);
             });
-    }
+    };
 
     return (
         <>
             <S.Container>
                 <S.Divleft>
                     <S.Logo onClick={() => navigate('/')} src={LogoBlack} />
-                    <S.Form onSubmit={cadastrar}>
+                    <S.Form onSubmit={handleSubmit(onSubmit)}>
                         <ButtonsReplacements
                             backgrouncolorone="black"
                             textone="CADASTRO"
                             backgrounColorTwo="whitesmoke"
                             textTwo="LOGIN"
                         />
-                        <InputForm
-                            text="NOME"
+                        <input
                             name="nome"
+                            onInput={inputSomenteTexto}
+                            type="text"
+                            className={errors.nome ? "classdeErro" : "classeNormal"}
+                            {...register('nome', { required: true })}
                         />
-                        <InputForm
-                            text="EMAIL"
+                        {errors && errors.nome && (
+                            <p style={{ color: "white" }}>Ta dando erro, precisa ser obrigatorio</p>
+                        )}
+                        <input
                             name="email"
+                            onInput={inputSemEspaco}
+                            className={errors.email ? "classdeErro" : "classeNormal"}
+                            {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
                         />
-                        <InputForm
-                            text="SENHA"
+                        {errors && errors.email && (
+                            <p style={{ color: "white" }}>Ta dando erro, precisa ser obrigatorio</p>
+                        )}
+                        <input
                             name="senha"
                             type="password"
-                            onChange={(e) => setSenha(e.target.value)}
+                            className={errors.senha ? "classdeErro" : "classeNormal"}
+                            {...register('senha', { required: true, minLength: 8 })}
                         />
-                        <InputForm
-                            text="CONFIRMAR SENHA"
+                        {errors && errors.senha && (
+                            <p style={{ color: "white" }}>Ta dando erro, precisa ser obrigatorio</p>
+                        )}
+                        <input
                             type="password"
-                            onChange={(e) => setConfirmarSenha(e.target.value)}
+                            className={errors.senha ? "classdeErro" : "classeNormal"}
+                            {...register('confirmarSenha', {
+                                required: true,
+                                validate: (value) => value === watch('senha'),
+                            })}
                         />
-                        <S.DivAdicionar>
-                            <S.Check />
-                            <S.TextReference>Desejo adicionar meu restaurante</S.TextReference>
-                        </S.DivAdicionar>
+                        {errors && errors.senha && (
+                            <p style={{ color: "white" }}>Ta dando erro, precisa ser obrigatorio</p>
+                        )}
                         <ButtonForm
                             type="submit"
                             height="8%"
