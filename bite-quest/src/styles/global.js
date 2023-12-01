@@ -6,8 +6,6 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     border: 0;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
-
-
     font-family: 'Bebas Neue', sans-serif; 
 
 
@@ -19,6 +17,22 @@ const GlobalStyles = createGlobalStyle`
   body {
     overflow-x: hidden;
   }
+
+
+
+
+  body::-webkit-scrollbar{
+    background-color: #242424 ;
+    width: 8px;
+  }
+
+
+
+  body::-webkit-scrollbar-thumb{
+     background-color: #CC830E ;
+     border-radius: 10px;
+  }
+
 
 
 

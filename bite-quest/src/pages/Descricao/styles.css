@@ -1,0 +1,10 @@
+.textAvaliacao{
+  margin-top: 10px;
+  height: 40%;
+  width: 100%;
+  background-color: #383838;
+  border: solid 1px whitesmoke;
+  outline: none;
+  color: white;
+  padding: 2px;
+}

@@ -51,7 +51,7 @@ function HomePage() {
             <li>
               <ButtonForm height="5.5vh" width="10vw" text="Cadastre-se" textColor="whitesmoke" fundoColor="#FCA311" fontSize="1.6rem" onClick={() => navigate('/Cadastro')} />
             </li>
-          </S.WrapperUl>
+          </S.WrapperUl> 
         </S.Wrapper>
       </S.NavBar>
       <S.Banner>
