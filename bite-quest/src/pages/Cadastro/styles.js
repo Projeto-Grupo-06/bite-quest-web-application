@@ -39,7 +39,6 @@ background-repeat: no-repeat;
 background-size: cover;
 `
 
-
 export const Form = styled.form`
 height: 80vh;
 width: 25vw;
