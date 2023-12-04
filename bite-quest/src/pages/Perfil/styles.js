@@ -37,6 +37,22 @@ border-radius: 20px;
 margin-top: 10%;
 `
 
+export const ImgExcluir = styled.img`
+width: 30px;
+position: absolute;
+right: 10px;
+top: 15px;
+opacity: 1;
+cursor: pointer;
+transition: filter 0.3s ease; /* Adiciona uma transição suave */
+
+&:hover {
+filter: saturate(100%);
+}
+
+`
+
+
 
 export const Form = styled.form`
 height: 40%;
@@ -190,7 +206,7 @@ align-items: center;
 justify-content: center;
 position: absolute;
 border-radius: 20px;
-
+box-shadow: 0px 0px 46px -6px rgba(0,0,0,0.75);
 `
 
 
@@ -228,3 +244,38 @@ background-color:${(props) => props.colorhover} ;
 }
 
 `
+
+
+
+
+
+
+
+
+
+export const DivBlur = styled.div`
+height: 100vh;
+width: 100vw;
+background-color: transparent;
+display: flex;
+align-items: center;
+justify-content: space-around;
+backdrop-filter: blur(20px);
+position: absolute;
+`
+
+
+export const DivBlockExclusao = styled.div`
+height: 40%;
+width: 30%;
+background-color: #171717;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+position: absolute;
+border-radius: 20px;
+box-shadow: 0px 0px 46px -6px rgba(77,77,77,1);
+`
+
+

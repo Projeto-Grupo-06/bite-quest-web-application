@@ -46,10 +46,10 @@ function HomePage() {
         <S.Wrapper>
           <S.WrapperUl>
             <li>
-              <ButtonForm height="5.5vh" width="10vw" text="Entrar" textColor="black" fundoColor="white" fontSize="1.6rem" onClick={() => navigate('/Login')} />
+              <ButtonForm height="5.5vh" width="10vw" text="Entrar" colorDoText="black" fundoColor="white" fontSize="1.6rem" onClick={() => navigate('/Login')} />
             </li>
             <li>
-              <ButtonForm height="5.5vh" width="10vw" text="Cadastre-se" textColor="whitesmoke" fundoColor="#FCA311" fontSize="1.6rem" onClick={() => navigate('/Cadastro')} />
+              <ButtonForm height="5.5vh" width="10vw" text="Cadastre-se" colorDoText="#E6E0DF" fundoColor="#FCA311" fontSize="1.6rem" onClick={() => navigate('/Cadastro')} />
             </li>
           </S.WrapperUl> 
         </S.Wrapper>
