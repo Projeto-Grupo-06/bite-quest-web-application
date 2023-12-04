@@ -18,7 +18,6 @@ const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
   }
 
-<<<<<<< HEAD
   .classdeErro {
     border-bottom: 1px solid red;
   }
@@ -40,11 +39,10 @@ const GlobalStyles = createGlobalStyle`
     transition: all 2s linear;
     }
   }
-=======
 
 
 
-<<<<<<< HEAD
+
   body::-webkit-scrollbar{
     background-color: #242424 ;
     width: 8px;
@@ -57,13 +55,6 @@ const GlobalStyles = createGlobalStyle`
      border-radius: 10px;
   }
 
-
-
-
-
-=======
->>>>>>> a5bd10241f89367c99ffcf83f07578ff83692dd7
->>>>>>> b43cdb4193afd0dcee049406fa23f33c13515f07
 `
 
 export default GlobalStyles;

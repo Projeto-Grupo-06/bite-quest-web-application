@@ -10,8 +10,8 @@ function ButtonsReplacements(props) {
 
       <S.DivReplace>
 
-        <S.ButtonCad type='button' onClick={() => navigate('/Cadastro')} backgrounColorOne={props.backgrounColorOne}>{props.textone}</S.ButtonCad>
-        <S.ButtonLog type='button' onClick={() => navigate('/Login')} backgrounColorTwo={props.backgrounColorTwo}>{props.textTwo}</S.ButtonLog>
+        <S.ButtonCad type='button' onClick={() => navigate(props.caminho)} backgrounColorOne={props.backgrounColorOne}>{props.textone}</S.ButtonCad>
+        <S.ButtonLog type='button' onClick={() => navigate(props.caminhodois)} backgrounColorTwo={props.backgrounColorTwo}>{props.textTwo}</S.ButtonLog>
 
       </S.DivReplace>
 

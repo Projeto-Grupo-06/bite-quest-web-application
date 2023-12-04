@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import StarRating from '../../components/Avaliacoes/avaliacoes'; 
 
+
 import Restaurante from "../../assets/Restaurante.png"
 import LogoBlack from "../../assets/LogoBlack.png"
 import iconDownload from "../../assets/iconDownload.png"
@@ -62,7 +63,7 @@ function Descricao() {
       <S.NavBar>
 
         <S.Img onClick={() => navigate('/')}  src={LogoBlack} alt="Logo Black" />
-        <S.ImgPerfil imgUrl={userPadrao}></S.ImgPerfil>
+        <S.ImgPerfil onClick={() => navigate("/Perfil")} imgUrl={userPadrao}></S.ImgPerfil>
 
       </S.NavBar>
 

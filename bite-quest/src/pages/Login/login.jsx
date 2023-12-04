@@ -31,7 +31,8 @@ function Login() {
 
                 <S.Divright>
                     <S.Form onSubmit={handleSubmit(onSubmit)}>
-                        <ButtonsReplacements backgrounColorOne="#EFEFEF" textone="CADASTRO" backgrounColorTwo="#FCA311" textTwo="LOGIN" />
+                        <ButtonsReplacements caminho="/Cadastro" backgrounColorOne="#EFEFEF" textone="CADASTRO"
+                        caminhodois="/Login" backgrounColorTwo="#FCA311" textTwo="LOGIN" />
 
                         <input
                             name="email"

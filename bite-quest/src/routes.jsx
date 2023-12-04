@@ -4,6 +4,7 @@ import Cadastro from "./pages/Cadastro/cadastro"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import Descricao from "./pages/Descricao/Descricao";
 import CadastroRestaurante from "./pages/CadastroRestaurante/CadastroRestaurante";
+import Perfil from "./pages/Perfil/Perfil";
 
 
 
@@ -15,7 +16,8 @@ function Rotas() {
           <Route path="/" element={<HomePage />} />
           <Route path="/Cadastro" element={<Cadastro />} />
           <Route path="/Login" element={<Login />} />
-           <Route path="/Descricao" element={<Descricao />} />
+          <Route path="/Descricao" element={<Descricao />} />
+          <Route path="/Perfil" element={<Perfil/>} />
           <Route path="/CadastroRestaurante" element={<CadastroRestaurante />} />
 
         </Routes>
