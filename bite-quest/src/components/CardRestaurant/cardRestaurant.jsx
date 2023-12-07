@@ -8,6 +8,7 @@ function cardRestaurant(props) {
         height={props.height}
         width={props.width}
         margin={props.margin}
+        onClick={props.onClick}
       >
         <S.ImgRestaurant imgUrl={props.imgUrl} />
         <S.TextRestaurant>

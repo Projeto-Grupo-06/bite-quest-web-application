@@ -1,4 +1,22 @@
 import styled from "styled-components";
+import { keyframes } from 'styled-components';
+
+
+
+const pulsate = keyframes`
+0% {
+    transform: scale(1);
+    filter: brightness(100%);
+  }
+  50% {
+    transform: scale(1.05);
+    filter: brightness(150%);
+  }
+  100% {
+    transform: scale(1);
+    filter: brightness(100%);
+  }`;
+
 
 export const Wrapper = styled.div`
   display: flex;
@@ -10,7 +28,13 @@ export const Wrapper = styled.div`
   margin: ${props => props.margin};
   background-color: #1D1E25;
   border-radius: 5%;
-`
+  box-shadow: 0px 0px 81px 0px rgba(0,0,0,0.38);
+  cursor: pointer;
+
+&:hover {
+    animation: ${pulsate} 1s infinite;
+  }`
+
 
 export const ImgRestaurant = styled.div`
 background-image: url(${props => props.imgUrl});

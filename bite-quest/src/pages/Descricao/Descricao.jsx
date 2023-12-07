@@ -15,8 +15,7 @@ import sair from "../../assets/x.png"
 
 import HorariosRestaurante from '../../components/HorariosRestaurantes/HorariosRestaurante'
 import CardComentarios from '../../components/CardComentarios/cardComentarios'
-import userPadrao from "../../assets/userPadrao.jpg"
-
+import userPadrao from "../../assets/user.png"
 
 function Descricao() {
   const navigate = useNavigate();
@@ -62,7 +61,7 @@ function Descricao() {
 
       <S.NavBar>
 
-        <S.Img onClick={() => navigate('/')}  src={LogoBlack} alt="Logo Black" />
+        <S.Img onClick={() => navigate('/Busca')}  src={LogoBlack} alt="Logo Black" />
         <S.ImgPerfil onClick={() => navigate("/Perfil")} imgUrl={userPadrao}></S.ImgPerfil>
 
       </S.NavBar>
@@ -75,15 +74,16 @@ function Descricao() {
         <S.DivUp>
 
           <S.DivImagePrincipal imgUrl={Restaurante} >
-            <S.NomeRestaurante>{"restaurante"}</S.NomeRestaurante>
+            <S.NomeRestaurante>{Restaurante.nome}</S.NomeRestaurante>
 
           </S.DivImagePrincipal>
 
 
           <S.DivInformacoes>
 
-            <S.iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.380519662609!2d-46.64323442533835!3d-23.66234636530869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5ad2f2b78c05%3A0xb61ea425f8fd04f9!2sAv.%20Muzambinho%20-%20Jabaquara%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004334-040%2C%20Brasil!5e0!3m2!1spt-BR!2slt!4v1701127509474!5m2!1spt-BR!2slt"></S.iframe>
-
+          <S.iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3654.3803817482803!2d-46.6406595!3d-23.662351299999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5ad2f2b78c05%3A0xb61ea425f8fd04f9!2sAv.%20Muzambinho%20-%20Jabaquara%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004334-040!5e0!3m2!1spt-BR!2sbr!4v1701970809759!5m2!1spt-BR!2sbr">
+          </S.iframe>
+ 
             <S.DivAlinInformations>
 
               <S.TittleDescricao>Descrição</S.TittleDescricao>

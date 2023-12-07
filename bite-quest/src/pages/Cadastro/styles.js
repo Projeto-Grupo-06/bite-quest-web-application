@@ -86,3 +86,14 @@ font-family: 'Montserrat', sans-serif;
 
 `
 
+
+export const Group = styled.div`
+width: 80%;
+background-color: transparent;
+display: flex;
+flex-direction: column;
+font-size: 1.2rem;
+margin-top: 15px;
+
+
+`

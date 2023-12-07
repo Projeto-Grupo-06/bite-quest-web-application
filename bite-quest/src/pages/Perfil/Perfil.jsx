@@ -2,7 +2,7 @@ import { useState } from 'react';
 import * as S from './styles';
 import './styles.css';
 import { useNavigate } from 'react-router-dom';
-import userPadrao from '../../assets/userPadrao.jpg';
+import userPadrao from "../../assets/user.png"
 import { useForm } from 'react-hook-form';
 import ButtonForm from '../../components/Form/buttons/ButtonForm/ButtonForm';
 import LogoBlack from '../../assets/LogoBlack.png';

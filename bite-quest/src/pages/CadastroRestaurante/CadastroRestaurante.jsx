@@ -373,7 +373,7 @@ function CadastroRestaurante() {
               <S.Buttons>
                 <S.ButtonDescricao backgorundColor='#D9D9D9' color='black' imgUrl={Cardapio} />
 
-                <S.ButtonDescricao backgorundColor='#FCA311' color='white'>Salvar</S.ButtonDescricao>
+                <S.ButtonDescricao backgorundColor='#FCA311' color='white'  onClick={() => navigate('/Busca')}>Salvar</S.ButtonDescricao>
               </S.Buttons>
             </S.WrapperButtons>
           </S.BoxDescricao>

@@ -19,7 +19,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   input {
-    width: 80%;
+    width: 100%;
     border:none;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
