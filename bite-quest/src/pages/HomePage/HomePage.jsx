@@ -1,4 +1,3 @@
-import React from 'react'
 import * as S from "./styles"
 
 
@@ -22,22 +21,10 @@ import lucas from '../../assets/Participantes/lucas.png'
 import vitor from '../../assets/Participantes/vitor.png'
 import vitoria from '../../assets/Participantes/vitoria.png'
 import dennys from '../../assets/Participantes/dennys.png'
-<<<<<<< HEAD
 import { useNavigate } from 'react-router'
-=======
-import { useNavigate } from 'react-router-dom'
->>>>>>> a5bd10241f89367c99ffcf83f07578ff83692dd7
-
-
-
 
 function HomePage() {
-<<<<<<< HEAD
   const navigate = useNavigate();
-=======
-
-    const navigate = useNavigate();
->>>>>>> a5bd10241f89367c99ffcf83f07578ff83692dd7
 
   return (
     <>
@@ -54,17 +41,10 @@ function HomePage() {
         <S.Wrapper>
           <S.WrapperUl>
             <li>
-<<<<<<< HEAD
               <ButtonForm height="5.5vh" width="10vw" text="Entrar" textColor="black" backgroundColor="white" fontSize="1.6rem" onClick={() => navigate('/Login')} />
             </li>
             <li>
               <ButtonForm height="5.5vh" width="10vw" text="Cadastre-se" textColor="whitesmoke" backgroundColor="#FCA311" fontSize="1.6rem" onClick={() => navigate('/Cadastro')} />
-=======
-              <ButtonForm height="5.5vh" width="10vw" text="Entrar" textColor="black" fundoColor="white" fontSize="1.6rem" onClick={() => navigate('/Login')} />
-            </li>
-            <li>
-              <ButtonForm height="5.5vh" width="10vw" text="Cadastre-se" textColor="whitesmoke" fundoColor="#FCA311" fontSize="1.6rem" onClick={() => navigate('/Cadastro')} />
->>>>>>> a5bd10241f89367c99ffcf83f07578ff83692dd7
             </li>
           </S.WrapperUl>
         </S.Wrapper>

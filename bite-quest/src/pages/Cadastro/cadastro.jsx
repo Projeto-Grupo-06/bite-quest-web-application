@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form';
 import api from '../../api';
 import * as S from './styles';
+import './styles.css';
 import { useNavigate } from 'react-router-dom';
 import LogoBlack from '../../assets/LogoBlack.png';
 import { inputSomenteTexto, inputSemEspaco } from '../../utils/formatadores';
@@ -12,17 +13,28 @@ function Cadastro() {
     const { register, handleSubmit, formState: { errors }, watch } = useForm();
 
     const onSubmit = (data) => {
-
-        api.post(`/usuarios`, data)
+        api.post('/usuarios', data)
             .then((response) => {
-                console.log(response);
-                navigate('/Login');
+                if (response.data && response.data.id) {
+                    const { id, nome, email, senha } = response.data;
+
+                    // Armazenar os dados no localStorage após o registro bem-sucedido
+                    localStorage.setItem('id', id);
+                    localStorage.setItem('nome', nome);
+                    localStorage.setItem('email', email);
+                    localStorage.setItem('senha', senha);
+
+                    console.log('Usuário autenticado:', response.data);
+                    navigate("/Login");
+                } else {
+                    console.log('Resposta inválida do servidor');
+                }
             })
             .catch((error) => {
-                console.log("error");
-                console.log(error);
+                console.log('Erro ao fazer login:', error.response.data);
             });
     };
+
 
     return (
         <>

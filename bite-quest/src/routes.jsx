@@ -3,7 +3,7 @@ import HomePage from './pages/HomePage/HomePage';
 import Cadastro from "./pages/Cadastro/cadastro"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import CadastroRestaurante from "./pages/CadastroRestaurante/CadastroRestaurante";
-
+import Busca from "./pages/Busca/Busca";
 
 function Rotas() {
   return (
@@ -13,7 +13,8 @@ function Rotas() {
           <Route path="/" element={<HomePage />} />
           <Route path="/Cadastro" element={<Cadastro />} />
           <Route path="/Login" element={<Login />} />
-          <Route path="/CadstroRestaurante" element={<CadastroRestaurante />} />
+          <Route path="/CadastroRestaurante" element={<CadastroRestaurante />} />
+          <Route path="/Busca" element={<Busca />} />
         </Routes>
       </Router>
     </>

@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
   justify-content: space-evenly;
   height: ${props => props.height};
   width: ${props => props.width};
+  margin: ${props => props.margin};
   background-color: #1D1E25;
   border-radius: 5%;
 `

@@ -19,11 +19,8 @@ const GlobalStyles = createGlobalStyle`
   body {
     overflow-x: hidden;
   }
-
-<<<<<<< HEAD
-  .classdeErro {
-    border-bottom: 1px solid red;
-  }
+  
+ 
 
   input {
     width: 80%;
@@ -35,18 +32,14 @@ const GlobalStyles = createGlobalStyle`
     color: whitesmoke;
     height: 40px;
     background-color: transparent;
-    font-size: 18px;
+    font-size: 1rem;
 
   &:focus {
-    background-color: #242020;
-    transition: all 2s linear;
+    background-color: rgb(255 255 255 / 0%);
+    outline: none;
+    box-shadow: none;
     }
   }
-=======
-
-
-
->>>>>>> a5bd10241f89367c99ffcf83f07578ff83692dd7
 `
 
 export default GlobalStyles;

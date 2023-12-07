@@ -12,14 +12,19 @@ function Login() {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = (data) => {
-        api.post('/usuarios', { email: data.email, senha: data.senha })
-            .then((response) => {
-                console.log('Usuário autenticado:', response.data);
-                navigate("/");
-            })
-            .catch((error) => {
-                console.log('Erro ao fazer login:', error.response.data);
-            });
+        const email = data.email;
+        const senha = data.senha;
+
+        // Recuperar os dados armazenados no localStorage
+        const storedEmail = localStorage.getItem('email');
+        const storedSenha = localStorage.getItem('senha');
+
+        if (email === storedEmail && senha === storedSenha) {
+            console.log('Usuário autenticado');
+            navigate("/");
+        } else {
+            console.log('Credenciais inválidas');
+        }
     };
 
     return (
