@@ -1,4 +1,3 @@
-import React from 'react'
 import * as S from "./styles"
 
 
@@ -22,14 +21,11 @@ import lucas from '../../assets/Participantes/lucas.png'
 import vitor from '../../assets/Participantes/vitor.png'
 import vitoria from '../../assets/Participantes/vitoria.png'
 import dennys from '../../assets/Participantes/dennys.png'
-import { useNavigate } from 'react-router-dom'
 
-
-
+import { useNavigate } from 'react-router'
 
 function HomePage() {
   const navigate = useNavigate();
-
 
   return (
     <>

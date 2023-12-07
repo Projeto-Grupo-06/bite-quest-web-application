@@ -18,9 +18,10 @@ const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
   }
 
+
   .classdeErro {
     border-bottom: 1px solid red;
-  }
+
 
   input {
     width: 80%;
@@ -32,23 +33,19 @@ const GlobalStyles = createGlobalStyle`
     color: whitesmoke;
     height: 40px;
     background-color: transparent;
-    font-size: 18px;
+    font-size: 1rem;
 
   &:focus {
-    background-color: #242020;
-    transition: all 2s linear;
+    background-color: rgb(255 255 255 / 0%);
+    outline: none;
+    box-shadow: none;
     }
   }
-
-
-
 
   body::-webkit-scrollbar{
     background-color: #242424 ;
     width: 8px;
   }
-
-
 
   body::-webkit-scrollbar-thumb{
      background-color: #CC830E ;
