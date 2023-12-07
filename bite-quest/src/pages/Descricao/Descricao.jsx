@@ -1,10 +1,10 @@
 import React from 'react'
 import * as S from "./styles"
-import  "./styles.css"
+import "./styles.css"
 
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import StarRating from '../../components/Avaliacoes/avaliacoes'; 
+import StarRating from '../../components/Avaliacoes/avaliacoes';
 
 
 import Restaurante from "../../assets/Restaurante.png"
@@ -22,17 +22,7 @@ function Descricao() {
   const navigate = useNavigate();
   const [exibirDivBlur, setExibirDivBlur] = useState(false);
 
-
-
-
-
-
-
-
-
-
-
-//abrir a tela de avaliação
+  //abrir a tela de avaliação
   const mostrarDivBlur = () => {
     setExibirDivBlur(true);
   };
@@ -41,14 +31,9 @@ function Descricao() {
     setExibirDivBlur(false);
   };
 
+  //avaliações componentde estrelas
 
-
-
-
-//avaliações componentde estrelas
-
-
-   const initialValueFromDatabase = 3; // Supondo que o valor venha do banco de dados
+  const initialValueFromDatabase = 3; // Supondo que o valor venha do banco de dados
 
   const handleRatingChange = (value) => {
     console.log(value);
@@ -61,24 +46,15 @@ function Descricao() {
 
 
       <S.NavBar>
-
-        <S.Img onClick={() => navigate('/')}  src={LogoBlack} alt="Logo Black" />
+        <S.Img onClick={() => navigate('/')} src={LogoBlack} alt="Logo Black" />
         <S.ImgPerfil onClick={() => navigate("/Perfil")} imgUrl={userPadrao}></S.ImgPerfil>
-
       </S.NavBar>
-
-
       <S.Container>
-
-
-
         <S.DivUp>
 
           <S.DivImagePrincipal imgUrl={Restaurante} >
             <S.NomeRestaurante>{"restaurante"}</S.NomeRestaurante>
-
           </S.DivImagePrincipal>
-
 
           <S.DivInformacoes>
 
@@ -125,11 +101,11 @@ function Descricao() {
             </S.DivUpComentario>
 
             <S.DivDownComentario>
-            
-            <CardComentarios  nameUser={"samuel bryan"}  dateText={"abril - 2023"} text={"salve esse restaurante ai é muito boms mesm. show de bola, recomendo!!!!"}>
-            </CardComentarios>
-                        
-          
+
+              <CardComentarios nameUser={"samuel bryan"} dateText={"abril - 2023"} text={"salve esse restaurante ai é muito boms mesm. show de bola, recomendo!!!!"}>
+              </CardComentarios>
+
+
             </S.DivDownComentario>
           </S.DivComentarios>
 
@@ -156,7 +132,7 @@ function Descricao() {
         </S.DivDown>
 
 
-        
+
 
 
 
@@ -169,33 +145,33 @@ function Descricao() {
 
 
 
-        <S.DivBlurAvaliacao style={{ display: exibirDivBlur ? 'flex' : 'none' }}>
-        
-           <S.DivAvaliacao>
+      <S.DivBlurAvaliacao style={{ display: exibirDivBlur ? 'flex' : 'none' }}>
 
-               <S.DivUpAvaliacao>
-                   <S.DivUpAvaliacaoContainer>
-                      <S.TittleDivUpAvaliacao>avaliação</S.TittleDivUpAvaliacao>
-                      <S.DivContainerBollAvaliacao>
-                      <StarRating initialValue={initialValueFromDatabase==null?0:initialValueFromDatabase} onChange={handleRatingChange} readOnly={true}/>
-                      </S.DivContainerBollAvaliacao>
-                   </S.DivUpAvaliacaoContainer>
+        <S.DivAvaliacao>
 
-                    <S.ImgExitAvaliacao onClick={esconderDivBlur} src={sair}></S.ImgExitAvaliacao>
-               </S.DivUpAvaliacao>
+          <S.DivUpAvaliacao>
+            <S.DivUpAvaliacaoContainer>
+              <S.TittleDivUpAvaliacao>avaliação</S.TittleDivUpAvaliacao>
+              <S.DivContainerBollAvaliacao>
+                <StarRating initialValue={initialValueFromDatabase == null ? 0 : initialValueFromDatabase} onChange={handleRatingChange} readOnly={true} />
+              </S.DivContainerBollAvaliacao>
+            </S.DivUpAvaliacaoContainer>
 
-               <S.DivDownAvaliacao>
-                 <S.TittleDivDownAvaliacao>Adicionar comentário</S.TittleDivDownAvaliacao>
-                 <textarea className='textAvaliacao' name="" id="" cols="30" rows="10"></textarea>
-                 <S.ButtonAvaliacao type='submit' >publicar</S.ButtonAvaliacao>
+            <S.ImgExitAvaliacao onClick={esconderDivBlur} src={sair}></S.ImgExitAvaliacao>
+          </S.DivUpAvaliacao>
 
-                </S.DivDownAvaliacao>
-      
-           </S.DivAvaliacao>
+          <S.DivDownAvaliacao>
+            <S.TittleDivDownAvaliacao>Adicionar comentário</S.TittleDivDownAvaliacao>
+            <textarea className='textAvaliacao' name="" id="" cols="30" rows="10"></textarea>
+            <S.ButtonAvaliacao type='submit' >publicar</S.ButtonAvaliacao>
+
+          </S.DivDownAvaliacao>
+
+        </S.DivAvaliacao>
 
 
 
-        </S.DivBlurAvaliacao>
+      </S.DivBlurAvaliacao>
 
 
 
