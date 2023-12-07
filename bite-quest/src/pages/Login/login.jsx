@@ -1,4 +1,5 @@
 import * as S from "./styles";
+import './styles.css';
 import { useForm } from 'react-hook-form';
 import ButtonForm from '../../components/Form/buttons/ButtonForm/ButtonForm';
 
@@ -39,15 +40,22 @@ function Login() {
                         <ButtonsReplacements caminho="/Cadastro" backgrounColorOne="#EFEFEF" textone="CADASTRO"
                         caminhodois="/Login" backgrounColorTwo="#FCA311" textTwo="LOGIN" />
 
+                        <S.Group>
+                        <label htmlFor="">Email</label>
                         <input
                             name="email"
                             {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
                         />
+                         </S.Group>
 
+                        <S.Group>
+                        <label htmlFor="">Senha</label>
                         <input
                             name="senha"
                             {...register('senha', { required: true, minLength: 8 })}
                         />
+
+                        </S.Group>
 
                         <S.Divgroup>
                             <S.Check />
@@ -57,7 +65,7 @@ function Login() {
                             </S.Second>
                         </S.Divgroup>
 
-                        <ButtonForm type="submit" height="58px" width="80%" text="Entrar" colorDoText="whitesmoke" marginTop="40px" fundoColor="#FCA311" fontSize="1.2rem" />
+                        <ButtonForm type="submit" height="58px" width="80%" text="Entrar" colorDoText="whitesmoke" marginTop="40px" fundoColor="#FCA311" fontSize="1.2rem" onClick={() => navigate('/CadastroRestaurante')} />
                     </S.Form>
                 </S.Divright>
             </S.Container>

@@ -192,4 +192,5 @@ export const ButtonDescricao = styled.button`
   color: ${props => props.color};
   border-radius: 5px;
   background-size: 25%;
+  cursor: pointer;
 `

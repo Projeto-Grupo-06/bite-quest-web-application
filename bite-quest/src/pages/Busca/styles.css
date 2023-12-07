@@ -1,9 +1,10 @@
 .input {
-  width: 30%;
-  border: solid 1px white;
-  height: 68%;
+  background-color:rgb(233, 233, 233);
+  width: 80%;
+  height: 100%;
   border-radius: 50px;
-  color: white;
+  color: rgb(17, 17, 17);
   padding-left: 20px;
   font-size: 1.2rem;
 }
+

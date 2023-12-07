@@ -50,6 +50,8 @@ function Cadastro() {
                             backgrounColorTwo="whitesmoke"
                             textTwo="LOGIN"
                         />
+                        <S.Group>
+                        <label htmlFor="">Nome</label>
                         <input
                             name="nome"
                             onInput={inputSomenteTexto}
@@ -57,27 +59,27 @@ function Cadastro() {
                             className={errors.nome ? "classdeErro" : "classeNormal"}
                             {...register('nome', { required: true })}
                         />
-                        {errors && errors.nome && (
-                            <p style={{ color: "white" }}>Ta dando erro, precisa ser obrigatorio</p>
-                        )}
+                        </S.Group>
+                        <S.Group>
+                        <label htmlFor="">Email</label>
                         <input
                             name="email"
                             onInput={inputSemEspaco}
                             className={errors.email ? "classdeErro" : "classeNormal"}
                             {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
                         />
-                        {errors && errors.email && (
-                            <p style={{ color: "white" }}>Ta dando erro, precisa ser obrigatorio</p>
-                        )}
+                        </S.Group>
+                        <S.Group>
+                        <label htmlFor="">Senha</label>
                         <input
                             name="senha"
                             type="password"
                             className={errors.senha ? "classdeErro" : "classeNormal"}
                             {...register('senha', { required: true, minLength: 8 })}
                         />
-                        {errors && errors.senha && (
-                            <p style={{ color: "white" }}>Ta dando erro, precisa ser obrigatorio</p>
-                        )}
+                        </S.Group>
+                        <S.Group>
+                        <label htmlFor="">Confirmar senha</label>
                         <input
                             type="password"
                             className={errors.senha ? "classdeErro" : "classeNormal"}
@@ -86,9 +88,7 @@ function Cadastro() {
                                 validate: (value) => value === watch('senha'),
                             })}
                         />
-                        {errors && errors.senha && (
-                            <p style={{ color: "white" }}>Ta dando erro, precisa ser obrigatorio</p>
-                        )}
+                        </S.Group>
                         <ButtonForm
                             type="submit"
                             height="8%"
