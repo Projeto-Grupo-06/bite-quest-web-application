@@ -38,17 +38,52 @@ function CadastroRestaurante() {
   };
 
   const onSubmit = (data) => {
+    // const hasErrors = Object.keys(errors).length > 0;
+
+    // if (hasErrors) {
+    //   Object.keys(errors).forEach((field) => {
+    //     setError(field, {
+    //       type: 'manual',
+    //       message: errors[field]?.message || 'Erro de validação',
+    //     });
+    //     setHighlightError((prevState) => ({
+    //       ...prevState,
+    //       [field]: true,
+    //     }));
+    //   });
+    // } else {
+    //   Object.keys(data).forEach((field) => {
+    //     localStorage.setItem(field, data[field]);
+    //     navigate('/Busca');
+    //   });
+    //   console.log(data);
+    // }
 
     const hasErrors = Object.keys(errors).length > 0;
+
     if (hasErrors) {
       setHighlightError(true);
     } else {
       Object.keys(data).forEach((field) => {
         localStorage.setItem(field, data[field]);
-        navigate('/Login');
+        navigate('/Busca');
       });
       console.log(data);
     }
+
+
+
+    // const hasErrors = Object.keys(errors).length > 0;
+    // if (hasErrors) {
+    //   setHighlightError(true);
+    // } else {
+    //   Object.keys(data).forEach((field) => {
+    //     localStorage.setItem(field, data[field]);
+    //     navigate('/Busca');
+    //   });
+    //   console.log(data);
+    // }
+
     // api.post(`/restaurantes`, data)
     //   .then((response) => {
     //     console.log(response);
@@ -128,7 +163,7 @@ function CadastroRestaurante() {
               <input
                 name="nomeRestaurante"
                 type="text"
-                className={highlightError && errors.nomeRestaurante ? "inputRestaurante error" : "inputRestaurante"}
+                className={`inputRestaurante ${highlightError && errors.nomeRestaurante ? 'error' : ''}`}
                 {...register('nomeRestaurante')}
                 onChange={handleNameChange}
               />

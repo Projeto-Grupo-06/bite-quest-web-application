@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+/* eslint-disable no-undef */
+/* eslint-disable react/prop-types */
+import { useState, useEffect } from 'react';
 import Rating from 'react-rating';
 import { FaStar, FaRegStar } from 'react-icons/fa';
 import styled from 'styled-components';
@@ -19,16 +21,16 @@ const CustomFaRegStar = styled(FaRegStar)`
 const Star = ({ selected, onSelect, readOnly, value }) => {
   const handleSelect = () => {
     if (!readOnly) {
-        initialValue = 5;
-      
-    }else{
-        onSelect();
+      initialValue = 5;
+
+    } else {
+      onSelect();
     }
   };
 
   return (
     <StarContainer onClick={handleSelect}>
-      {selected && readOnly ? <CustomFaStar color="#ffc107" /> : <CustomFaRegStar color="#e4e5e9"  />}
+      {selected && readOnly ? <CustomFaStar color="#ffc107" /> : <CustomFaRegStar color="#e4e5e9" />}
       <span style={{ display: 'none' }}>{value}</span>
     </StarContainer>
   );
