@@ -1,8 +1,10 @@
 import styled from "styled-components";
-import BackgroundImage from "../../assets/plano-de-fundo-texturizado-de-parede-solida-de-concreto-pintado.png"
+import BackgroundImage from "../../assets/backgrey.png"
 
 
 export const Container = styled.form`
+
+  background-color: black;
   height: 100vh;
   background-image: url(${BackgroundImage});
   background-position: center;

@@ -8,8 +8,11 @@ export const Buttonformsubmit = styled.button`
   color: ${props => props.colorDoText};
   font-size: ${props => props.fontSize};
   margin-top: ${props => props.marginTop} ;
-  font-weight: bold; 
+  font-weight: 100; 
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 `;
 

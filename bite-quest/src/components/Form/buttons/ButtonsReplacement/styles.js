@@ -23,14 +23,11 @@ font-weight: bold;
 font-size: 18px;
 cursor: pointer;
 
-
   &:hover {
     font-size: 19px;
         transition: all 1s linear;
 
   }
-
-
 
 `
 
@@ -44,6 +41,7 @@ color: ${props => props.backgrounColorTwo === 'whitesmoke' ? 'black' : "whitesmo
 font-weight: bold;
 font-size: 18px;
 cursor: pointer;
+
 
   &:hover {
     font-size: 19px;
