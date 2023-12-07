@@ -9,7 +9,6 @@ import { useNavigate } from 'react-router-dom';
 function Busca() {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
-  // const scrollRef = useRef(null);
 
   const restaurantes = [
     {

@@ -7,10 +7,6 @@ const GlobalStyles = createGlobalStyle`
     border: 0;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     font-family: 'Bebas Neue', sans-serif; 
-
-
-
-    
     text-decoration: none;
   }
 
@@ -18,10 +14,9 @@ const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
   }
 
-
   .classdeErro {
     border-bottom: 1px solid red;
-
+  }
 
   input {
     width: 80%;
