@@ -16,13 +16,8 @@ function Cadastro() {
         api.post('/usuarios', data)
             .then((response) => {
                 if (response.data && response.data.id) {
-                    const { id, nome, email, senha } = response.data;
-
-                    // Armazenar os dados no localStorage após o registro bem-sucedido
-                    localStorage.setItem('id', id);
-                    localStorage.setItem('nome', nome);
-                    localStorage.setItem('email', email);
-                    localStorage.setItem('senha', senha);
+                    
+                    localStorage.setItem('usuario', JSON.stringify(response.data))
 
                     console.log('Usuário autenticado:', response.data);
                     navigate("/Login");

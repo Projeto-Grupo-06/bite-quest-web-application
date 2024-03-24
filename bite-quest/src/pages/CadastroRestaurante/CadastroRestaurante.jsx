@@ -8,6 +8,7 @@ import { inputSomenteTexto, inputSemEspaco, inputSomenteNumero } from '../../uti
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
+import api from '../../api';
 
 
 function CadastroRestaurante() {
@@ -37,116 +38,42 @@ function CadastroRestaurante() {
     }
   };
 
+
   const onSubmit = (data) => {
-    // const hasErrors = Object.keys(errors).length > 0;
-
-    // if (hasErrors) {
-    //   Object.keys(errors).forEach((field) => {
-    //     setError(field, {
-    //       type: 'manual',
-    //       message: errors[field]?.message || 'Erro de validação',
-    //     });
-    //     setHighlightError((prevState) => ({
-    //       ...prevState,
-    //       [field]: true,
-    //     }));
-    //   });
-    // } else {
-    //   Object.keys(data).forEach((field) => {
-    //     localStorage.setItem(field, data[field]);
-    //     navigate('/Busca');
-    //   });
-    //   console.log(data);
-    // }
-
-    const hasErrors = Object.keys(errors).length > 0;
-
-    if (hasErrors) {
-      setHighlightError(true);
-    } else {
-      Object.keys(data).forEach((field) => {
-        localStorage.setItem(field, data[field]);
-        navigate('/Busca');
-      });
-      console.log(data);
+    const novoRestaurante = {
+      nome: "Restaurante Vitor",
+      cnpj: "89.917.812/0001-00",
+      cep: "08265-180",
+      endereco: "Rua Raiz do Sol",
+      numero: "93",
+      complemento: "Jardim Helian",
+      descricao: "Comida japonesa",
+      tipo: "Entrega",
+      comentario: "Entrega rapida e comida boa",
+      horariosDeFuncionamento: {
+        "Segunda-feira": "09:00 - 17:00",
+        "Terça-feira": "09:00 - 17:00",
+        "Quarta-feira": "09:00 - 17:00"
+      },
+      cardapios: [
+        {
+          imagem: "string"
+        }
+      ]
     }
 
 
-
-    // const hasErrors = Object.keys(errors).length > 0;
-    // if (hasErrors) {
-    //   setHighlightError(true);
-    // } else {
-    //   Object.keys(data).forEach((field) => {
-    //     localStorage.setItem(field, data[field]);
-    //     navigate('/Busca');
-    //   });
-    //   console.log(data);
-    // }
-
-    // api.post(`/restaurantes`, data)
-    //   .then((response) => {
-    //     console.log(response);
-    //     const { nome, cnpj, cep, endereco, numero, complemento, descricao, entradaSegunda, entradaTerca, entradaQuarta, entradaQuinta, entradaSexta, entradaSabado, entradaDomingo, saidaSegunda, saidaTerca, saidaQuarta, saidaQuinta, saidaSexta, saidaSabado, saidaDomingo } = response.data;
-
-    //     localStorage.setItem('nome', nome);
-    //     localStorage.setItem('cnpj', cnpj);
-    //     localStorage.setItem('cep', cep);
-    //     localStorage.setItem('endereco', endereco);
-    //     localStorage.setItem('numero', numero);
-    //     localStorage.setItem('complemento', complemento);
-    //     localStorage.setItem('descricao', descricao);
-
-    //     const timeFields = [
-    //       'entradaSegunda',
-    //       'entradaTerca',
-    //       'entradaQuarta',
-    //       'entradaQuinta',
-    //       'entradaSexta',
-    //       'entradaSabado',
-    //       'entradaDomingo',
-    //       'saidaSegunda',
-    //       'saidaTerca',
-    //       'saidaQuarta',
-    //       'saidaQuinta',
-    //       'saidaSexta',
-    //       'saidaSabado',
-    //       'saidaDomingo',
-    //     ];
-
-    //     // Iterar sobre os campos de tempo e converter os valores para strings
-    //     timeFields.forEach((field) => {
-    //       if (data[field]) {
-    //         data[field] = data[field].toString(); // Convertendo para string antes de salvar no localStorage
-    //         localStorage.setItem(field, data[field]);
-    //       }
-    //     });
-
-    //     // navigate('/Login');
-    //   })
-    //   .catch((error) => {
-    //     if (error.response) {
-    //       const backendErrors = error.response.data.errors;
-    //       Object.keys(backendErrors).forEach((fieldName) => {
-    //         setError(fieldName, {
-    //           type: 'text',
-    //           message: backendErrors[fieldName],
-    //         });
-    //       });
-    //     }
-    //   });
-
-
-    // api.post(`/restaurantes`, data)
-    //   .then((response) => {
-    //     console.log(response);
-    //     navigate('/Login');
-    //   })
-    //   .catch((error) => {
-    //     console.log("error");
-    //     console.log(error);
-    //   });
+    const usuario = JSON.parse(localStorage.getItem("usuario"))
+    api.post("/restaurantes", novoRestaurante, { params: { usuarioId: usuario.id } })
+      .then(response => {
+        console.log(response.data)
+        alert("Restaurante cadastrado com sucesso")
+        navigate("/Busca")
+      }).catch(() => {
+        alert("Cadastro do Restaurante não realizado")
+      })
   };
+
 
   return (
     <>
@@ -408,7 +335,7 @@ function CadastroRestaurante() {
               <S.Buttons>
                 <S.ButtonDescricao backgorundColor='#D9D9D9' color='black' imgUrl={Cardapio} />
 
-                <S.ButtonDescricao backgorundColor='#FCA311' color='white'  onClick={() => navigate('/Busca')}>Salvar</S.ButtonDescricao>
+                <S.ButtonDescricao backgorundColor='#FCA311' color='white' type="submit" >Salvar</S.ButtonDescricao>
               </S.Buttons>
             </S.WrapperButtons>
           </S.BoxDescricao>
