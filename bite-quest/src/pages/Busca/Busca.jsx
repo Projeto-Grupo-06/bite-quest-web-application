@@ -3,7 +3,7 @@ import * as S from './styles';
 import './styles.css';
 import SiSenor from '../../assets/siSenor.jpg'
 import LogoBlack from "../../assets/LogoBlack.png"
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import userPadrao from "../../assets/user.png"
 import lupa from "../../assets/lupa.png"
@@ -24,6 +24,7 @@ import R11 from "../../assets/r11.jpg"
 import R12 from "../../assets/r12.jpg"
 import R13 from "../../assets/r13.jpg"
 import R14 from "../../assets/r14.jpg"
+import api from '../../api';
 
 
 
@@ -32,12 +33,27 @@ import R14 from "../../assets/r14.jpg"
 function Busca() {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
+  const [restaurantes, setRestaurantes] = useState([]);
+  
 
-const restaurantes = [
+  useEffect(() => {
+    const fetchRestaurantes = () => {
+      api.get('/restaurantes')
+        .then(response => {
+          console.log(response.data); 
+          setRestaurantes(response.data);
+        })
+        .catch(error => {
+          console.error('Erro ao buscar restaurantes:', error);
+        });
+    };
+  
+    fetchRestaurantes();
+  }, []);
+  
+
+const imagens = [
   {
-    nome: 'Si señor',
-    localidade: 'São Paulo',
-    bairro: 'Vila Olímpia',
     imgUrl: R1,
     colorCircle1: 'orange',
     colorCircle2: 'orange',
@@ -46,19 +62,13 @@ const restaurantes = [
     colorCircle5: 'orange',
   },
   {
-    nome: 'D´Japa',
-    localidade: 'São Paulo',
-    bairro: 'Jabaquara',
     imgUrl: Restaurante,
     colorCircle1: 'orange',
     colorCircle2: 'orange',
     colorCircle3: 'orange',
     colorCircle4: 'orange',
-    colorCircle5: 'orange',  },
+    colorCircle5: 'grey',  },
   {
-    nome: 'Spice Fusion',
-    localidade: 'Salvador',
-    bairro: 'Barra',
     imgUrl: R3,
 colorCircle1: 'orange',
     colorCircle2: 'orange',
@@ -66,9 +76,6 @@ colorCircle1: 'orange',
     colorCircle4: 'orange',
     colorCircle5: 'grey',  },
   {
-    nome: 'The Green Leaf Bistro',
-    localidade: 'Brasília',
-    bairro: 'Asa Sul',
     imgUrl: R4,
 colorCircle1: 'orange',
     colorCircle2: 'orange',
@@ -76,9 +83,6 @@ colorCircle1: 'orange',
     colorCircle4: 'orange',
     colorCircle5: 'grey',  },
   {
-    nome: 'Chez Pierre',
-    localidade: 'Fortaleza',
-    bairro: 'Meireles',
     imgUrl: R5,
 colorCircle1: 'orange',
     colorCircle2: 'orange',
@@ -86,9 +90,6 @@ colorCircle1: 'orange',
     colorCircle4: 'grey',
     colorCircle5: 'grey',  },
   {
-    nome: 'Blue Ocean Grill',
-    localidade: 'Recife',
-    bairro: 'Boa Viagem',
     imgUrl: R6,
 colorCircle1: 'orange',
     colorCircle2: 'grey',
@@ -96,9 +97,6 @@ colorCircle1: 'orange',
     colorCircle4: 'grey',
     colorCircle5: 'grey',  },
   {
-    nome: 'Terra Nova Taverna',
-    localidade: 'Porto Alegre',
-    bairro: 'Moinhos de Vento',
     imgUrl: R7,
 colorCircle1: 'orange',
     colorCircle2: 'orange',
@@ -106,9 +104,6 @@ colorCircle1: 'orange',
     colorCircle4: 'orange',
     colorCircle5: 'grey',  },
   {
-    nome: 'Golden Harvest Eatery',
-    localidade: 'Florianópolis',
-    bairro: 'Centro',
     imgUrl: R8,
 colorCircle1: 'orange',
     colorCircle2: 'orange',
@@ -116,9 +111,7 @@ colorCircle1: 'orange',
     colorCircle4: 'grey',
     colorCircle5: 'grey',  },
   {
-    nome: 'Bella Napoli Pizzeria',
-    localidade: 'Natal',
-    bairro: 'Ponta Negra',
+
     imgUrl: R9,
 colorCircle1: 'orange',
     colorCircle2: 'orange',
@@ -126,9 +119,7 @@ colorCircle1: 'orange',
     colorCircle4: 'orange',
     colorCircle5: 'orange',  },
   {
-    nome: 'Fusion Junction',
-    localidade: 'João Pessoa',
-    bairro: 'Tambaú',
+
     imgUrl: R10,
 colorCircle1: 'orange',
     colorCircle2: 'orange',
@@ -136,9 +127,7 @@ colorCircle1: 'orange',
     colorCircle4: 'grey',
     colorCircle5: 'grey',  },
   {
-    nome: 'Sabor Mexicano',
-    localidade: 'Curitiba',
-    bairro: 'Batel',
+
     imgUrl: R11,
 colorCircle1: 'orange',
     colorCircle2: 'orange',
@@ -146,9 +135,7 @@ colorCircle1: 'orange',
     colorCircle4: 'grey',
     colorCircle5: 'grey',  },
   {
-    nome: 'The Maple Table',
-    localidade: 'Belém',
-    bairro: 'Umarizal',
+
     imgUrl: R12,
 colorCircle1: 'orange',
     colorCircle2: 'orange',
@@ -156,9 +143,7 @@ colorCircle1: 'orange',
     colorCircle4: 'grey',
     colorCircle5: 'grey',  },
   {
-    nome: 'Zen Garden Sushi Bar',
-    localidade: 'Manaus',
-    bairro: 'Adrianópolis',
+
     imgUrl: R13 ,
 colorCircle1: 'orange',
     colorCircle2: 'orange',
@@ -166,9 +151,7 @@ colorCircle1: 'orange',
     colorCircle4: 'grey',
     colorCircle5: 'grey',  },
   {
-    nome: 'Rustic Oak Café',
-    localidade: 'Porto Velho',
-    bairro: 'Centro',
+
     imgUrl: R14,
 colorCircle1: 'orange',
     colorCircle2: 'grey',
@@ -181,13 +164,18 @@ colorCircle1: 'orange',
     setSearchTerm(event.target.value);
   };
 
+  // for (let index = 0; index < restaurantes.length; index++) {
+  //   const element = restaurantes[index];
+  //   element.
+  // }
+
   const filteredRestaurantes = restaurantes.filter((restaurante) => {
-    const { nome, localidade, bairro } = restaurante;
+    const { nome, endereco, bairro } = restaurante;
     const formattedSearchTerm = searchTerm.toLowerCase();
     return (
       nome.toLowerCase().includes(formattedSearchTerm) ||
-      localidade.toLowerCase().includes(formattedSearchTerm) ||
-      bairro.toLowerCase().includes(formattedSearchTerm)
+      endereco.toLowerCase().includes(formattedSearchTerm) ||
+      bairro.toLowerCase().includes(formattedSearchTerm) 
     );
   });
 
@@ -213,26 +201,25 @@ colorCircle1: 'orange',
 
 
         <S.BoxRestaurante>
-          {filteredRestaurantes.map((restaurante, index) => (
-            <CardRestaurant
-              onClick={() => navigate('/Descricao')}
-              key={index}
-              height="45vh"
-              width="84%"
-              margin="19px"
-              imgUrl={restaurante.imgUrl}
-              fontSizeName="1.3rem"
-              fontSizeAddress="1.1rem"
-              name={restaurante.nome}
-              address={restaurante.localidade}
-              bairro={restaurante.bairro}
-              colorCircle1={restaurante.colorCircle1}
-              colorCircle2={restaurante.colorCircle2}
-              colorCircle3={restaurante.colorCircle3}
-              colorCircle4={restaurante.colorCircle4}
-              colorCircle5={restaurante.colorCircle5}
-            />
-          ))}
+        {filteredRestaurantes.map((restaurantes, index) => (
+        <CardRestaurant
+          key={restaurantes.id}
+          onClick={() => navigate(`/Descricao/${restaurantes.id}`)} // Aqui você pode passar o ID do restaurantes como parâmetro para a rota
+          height="45vh"
+          width="84%"
+          margin="19px"
+          imgUrl={imagens[index % imagens.length].imgUrl}
+          fontSizeName="1.3rem"
+          fontSizeAddress="1.1rem"
+          name={restaurantes.nome}  
+          address={restaurantes.endereco}
+          colorCircle1={imagens[index % imagens.length].colorCircle1} 
+          colorCircle2={imagens[index % imagens.length].colorCircle2} 
+          colorCircle3={imagens[index % imagens.length].colorCircle3} 
+          colorCircle4={imagens[index % imagens.length].colorCircle4} 
+          colorCircle5={imagens[index % imagens.length].colorCircle5}
+        />
+      ))}
         </S.BoxRestaurante>
        
       </S.Teste>

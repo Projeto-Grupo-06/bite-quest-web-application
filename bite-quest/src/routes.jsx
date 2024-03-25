@@ -6,6 +6,7 @@ import Descricao from "./pages/Descricao/Descricao";
 import CadastroRestaurante from "./pages/CadastroRestaurante/CadastroRestaurante";
 import Busca from "./pages/Busca/Busca";
 import Perfil from "./pages/Perfil/Perfil";
+import AtualizarRestaurante from "./pages/AtualizarRestaurante/AtualizarRestaurante";
 
 function Rotas() {
   return (
@@ -16,9 +17,10 @@ function Rotas() {
           <Route path="/Cadastro" element={<Cadastro />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Busca" element={<Busca />} />
-          <Route path="/Descricao" element={<Descricao />} />
-          <Route path="/Perfil" element={<Perfil/>} />
+          <Route path="/Descricao/:id" element={<Descricao />} />
+          <Route path="/Perfil/:id" element={<Perfil/>} />
           <Route path="/CadastroRestaurante" element={<CadastroRestaurante />} />
+          <Route path="/AtualizarRestaurante/:id" element={<AtualizarRestaurante />} />
         </Routes>
       </Router>
     </>

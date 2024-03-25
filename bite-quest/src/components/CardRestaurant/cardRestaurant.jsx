@@ -13,7 +13,7 @@ function cardRestaurant(props) {
         <S.ImgRestaurant imgUrl={props.imgUrl} />
         <S.TextRestaurant>
           <S.Name fontSizeName={props.fontSizeName}>{props.name}</S.Name>
-          <S.Address fontSizeAddress={props.fontSizeAddress}>{props.address} - {props.bairro}</S.Address>
+          <S.Address fontSizeAddress={props.fontSizeAddress}>{props.address}</S.Address>
           <S.Assessment>
             <S.Circle colorCircle={props.colorCircle1} />
             <S.Circle colorCircle={props.colorCircle2} />

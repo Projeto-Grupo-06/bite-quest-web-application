@@ -12,19 +12,37 @@ function Login() {
     const navigate = useNavigate();
     const { register, handleSubmit } = useForm();
 
-    const onSubmit = (data) => {
-        const email = data.email;
-        const senha = data.senha;
+    // const onSubmit = (data) => {
+    //     const email = data.email;
+    //     const senha = data.senha;
 
-        // Recuperar os dados armazenados no localStorage
-        const storedEmail = localStorage.getItem('email');
-        const storedSenha = localStorage.getItem('senha');
+    //     // Recuperar os dados armazenados no localStorage
+    //     const storedEmail = localStorage.getItem('email');
+    //     const storedSenha = localStorage.getItem('senha');
 
-        if (email === storedEmail && senha === storedSenha) {
-            console.log('Usuário autenticado');
-            navigate("/");
-        } else {
-            console.log('Credenciais inválidas');
+    //     if (email === storedEmail && senha === storedSenha) {
+    //         console.log('Usuário autenticado');
+    //         navigate("/");
+    //     } else {
+    //         console.log('Credenciais inválidas');
+    //     }
+    // };
+
+    const onSubmit = async (data) => {
+        try {
+            const response = await api.post('/usuarios/login', data);
+            if (response.status === 200) {
+                const token = response.data.token;
+                // Armazenar o token localmente
+                localStorage.setItem('token', token);
+                console.log('Usuário autenticado');
+                // Redirecionar para a página inicial
+                navigate("/CadastroRestaurante");
+            } else {
+                console.log('Credenciais inválidas');
+            }
+        } catch (error) {
+            console.error('Erro ao fazer login:', error);
         }
     };
 
@@ -52,6 +70,7 @@ function Login() {
                         <label htmlFor="">Senha</label>
                         <input
                             name="senha"
+                            type="password"
                             {...register('senha', { required: true, minLength: 8 })}
                         />
 
@@ -65,7 +84,7 @@ function Login() {
                             </S.Second>
                         </S.Divgroup>
 
-                        <ButtonForm type="submit" height="58px" width="80%" text="Entrar" colorDoText="whitesmoke" marginTop="40px" fundoColor="#FCA311" fontSize="1.2rem" onClick={() => navigate('/CadastroRestaurante')} />
+                        <ButtonForm type="submit" height="58px" width="80%" text="Entrar" colorDoText="whitesmoke" marginTop="40px" fundoColor="#FCA311" fontSize="1.2rem" />
                     </S.Form>
                 </S.Divright>
             </S.Container>

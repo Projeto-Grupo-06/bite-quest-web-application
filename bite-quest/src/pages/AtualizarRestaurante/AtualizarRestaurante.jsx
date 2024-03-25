@@ -5,19 +5,21 @@ import CardRestaurant from "../../components/CardRestaurant/cardRestaurant"
 import SiSenor from "../../assets/siSenor.jpg"
 import Cardapio from "../../assets/cardapio.png"
 import { inputSomenteTexto, inputSemEspaco, inputSomenteNumero } from '../../utils/formatadores';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import api from '../../api';
 
 
-function CadastroRestaurante() {
+function AtualizarRestaurante() {
 
   const navigate = useNavigate();
   const { register, handleSubmit, setValue, setFocus, formState: { errors }, setError } = useForm();
   const [highlightError, setHighlightError] = useState(false);
   const [restaurantName, setRestaurantName] = useState(''); // Estado local para armazenar o nome do restaurante
   const [addressData, setAddressData] = useState({});
+  const { id } = useParams();
+
 
   const handleNameChange = (e) => {
     setRestaurantName(e.target.value);
@@ -67,15 +69,15 @@ function CadastroRestaurante() {
     }
 
 
-    const usuario = JSON.parse(localStorage.getItem("usuario"))
-    api.post("/restaurantes", novoRestaurante, { params: { usuarioId: usuario.id } })
-      .then(response => {
-        console.log(response.data)
-        alert("Restaurante cadastrado com sucesso")
-        navigate("/Busca")
-      }).catch(() => {
-        alert("Cadastro do Restaurante não realizado")
-      })
+    api.put(`/restaurantes/${id}`, novoRestaurante)
+  .then(response => {
+    console.log(response.data)
+    alert("Restaurante atualizado com sucesso")
+    navigate(`/Descricao/${id}`)
+  }).catch(() => {
+    alert("Atualização do Restaurante não realizada")
+  })
+
   };
 
 
@@ -349,4 +351,4 @@ function CadastroRestaurante() {
   )
 }
 
-export default CadastroRestaurante
+export default AtualizarRestaurante

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import * as S from './styles';
 import './styles.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import userPadrao from "../../assets/user.png"
 import { useForm } from 'react-hook-form';
 import ButtonForm from '../../components/Form/buttons/ButtonForm/ButtonForm';
@@ -13,7 +13,7 @@ function Perfil() {
   const navigate = useNavigate();
   const [showConfirm, setShowConfirm] = useState(false);
   const [showBlur, setShowBlur] = useState(false);
-
+  const { id } = useParams();
 
 
 
@@ -23,11 +23,9 @@ function Perfil() {
 
 
   function sairDaConta() {  //função para sair da conta 
-    
-    
-    
+    localStorage.clear();
     setShowConfirm(false);  //ocultar div de confirmação
-    navigate("/")
+    navigate("/");
   }
 
 
@@ -92,7 +90,7 @@ function Perfil() {
             </S.Form>
 
             <S.Divgroup>
-              <S.TextReference onClick={() => navigate('/CadastroRestaurante')}>
+              <S.TextReference onClick={() => navigate(`/AtualizarRestaurante/${id}`)}>
                 Atualizar restaurante
               </S.TextReference>
             </S.Divgroup>
