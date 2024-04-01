@@ -2,7 +2,7 @@ import styled from "styled-components";
 import BannerBiteQuest from "../../assets/Bitequest-banner.png"
 import ImgRecommendations from "../../assets/recomendacoes.png"
 import texturaPromotional from "../../assets/texturaPromotional.png"
-import backgroundParticipantes from "../../assets/backgroundParticipantes.png"
+import backgroundParticipantes from "../../assets/backgroundparticipantes.png"
 import backgroundfooter from "../../assets/backgroundfooter.png"
 
 export const NavBar = styled.nav`
