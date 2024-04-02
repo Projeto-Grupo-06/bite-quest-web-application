@@ -8,7 +8,7 @@ import Restaurante from "../../assets/Restaurante.png";
 import LogoBlack from "../../assets/LogoBlack.png";
 import iconDownload from "../../assets/iconDownload.png";
 import sair from "../../assets/x.png";
-import HorariosRestaurante from "../../components/HorariosRestaurantes/HorariosRestaurante";
+import HorariosRestaurante from "../../components/HorariosRestaurantes/horariosRestaurante";
 import CardComentarios from "../../components/CardComentarios/cardComentarios";
 import userPadrao from "../../assets/user.png";
 import api from "../../api";

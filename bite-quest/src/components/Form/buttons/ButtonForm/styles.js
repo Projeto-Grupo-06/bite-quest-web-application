@@ -7,13 +7,10 @@ export const Buttonformsubmit = styled.button`
   border-radius: 6px;
   color: ${props => props.colorDoText};
   font-size: ${props => props.fontSize};
-  margin-top: ${props => props.marginTop} ;
+  margin-top: ${props => props.marginTop};
   font-weight: 100; 
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-
 `;
-
-

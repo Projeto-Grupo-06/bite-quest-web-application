@@ -1,25 +1,18 @@
 import React from 'react'
 import * as S from './styles'
 
-function ButtonForm(props) {
-
-
+function ButtonForm({ colorDoText, fundoColor, marginTop, fontSize, ...props }) {
   return (
     <>
       <S.Buttonformsubmit
-        onClick={props.onClick}
-        height={props.height}
-        width={props.width}
-        colorDoText={props.colorDoText}
-        fundoColor={props.fundoColor}
-        marginTop={props.marginTop}
-        fontSize={props.fontSize}
-        type={props.type}
+        colorDoText={colorDoText}
+        fundoColor={fundoColor}
+        marginTop={marginTop}
+        fontSize={fontSize}
+        {...props}
       >
-
         {props.text}
       </S.Buttonformsubmit>
-
     </>
   )
 }

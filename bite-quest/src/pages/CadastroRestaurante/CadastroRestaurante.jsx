@@ -71,10 +71,8 @@ function CadastroRestaurante() {
     api.post("/restaurantes", novoRestaurante, { params: { usuarioId: usuario.id } })
       .then(response => {
         console.log(response.data)
-        alert("Restaurante cadastrado com sucesso")
         navigate("/Busca")
       }).catch(() => {
-        alert("Cadastro do Restaurante não realizado")
       })
   };
 
