@@ -16,9 +16,9 @@ export const ButtonCad = styled.button`
 height: 100%;
 width: 50%;
 color: blue;
-background-color: ${props => props.backgrounColorOne};
+background-color: ${props => props.backgrouncolorone};
 border-radius: 40px;
-color: ${props => props.backgrounColorOne === '#FCA311' ? 'whitesmoke' : 'black'};;
+color: ${props => props.backgrouncolorone === '#FCA311' ? 'whitesmoke' : 'black'};;
 font-weight: bold;
 font-size: 18px;
 cursor: pointer;
