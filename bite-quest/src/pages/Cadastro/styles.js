@@ -86,6 +86,13 @@ font-family: 'Montserrat', sans-serif;
 
 `
 
+export const Textsuport = styled.span`
+color: #0090C3;
+font-size: 12px;
+font-weight: bold;
+font-family: 'Montserrat', sans-serif;
+`
+
 
 export const Group = styled.div`
 width: 80%;

@@ -2,3 +2,10 @@
   border-bottom: 1px solid red;
   transition: all 2s linear;
 }
+
+.error-message{
+  color: #ff3a3a;
+font-size: 12px;
+font-weight: bolder;
+font-family: 'Montserrat', sans-serif;
+}

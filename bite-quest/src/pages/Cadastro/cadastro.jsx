@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import api from '../../api';
 import * as S from './styles';
@@ -8,11 +9,18 @@ import { inputSomenteTexto, inputSemEspaco } from '../../utils/formatadores';
 import ButtonForm from '../../components/Form/buttons/ButtonForm/ButtonForm';
 import ButtonsReplacements from '../../components/Form/buttons/ButtonsReplacement/ButtonsReplacements';
 
+
 function Cadastro() {
     const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors }, watch } = useForm();
+    const [emailError, setEmailError] = useState(false);
+    const [senhaError, setSenhaError] = useState(false);
+   
 
     const onSubmit = (data) => {
+
+        console.log(errors.email)
+
         api.post('/usuarios', data)
             .then((response) => {
                 if (response.data && response.data.id) {
@@ -22,13 +30,33 @@ function Cadastro() {
                     console.log('Usuário autenticado:', response.data);
                     navigate("/Login");
                 } else {
-                    console.log('Resposta inválida do servidor');
+                    alert.log('Resposta inválida do servidor');
                 }
             })
             .catch((error) => {
-                console.log('Erro ao fazer login:', error.response.data);
+                alert('Erro ao fazer login:', error.response.data);
             });
     };
+
+
+    const inputSemEspaco = (e) => {
+        const value = e.target.value;
+        if (!value.includes('@')) {
+          setEmailError(true);
+        } else {
+          setEmailError(false);
+        }
+      };
+      const insenha = (e) => {
+        const value = e.target.value;
+        const senhaRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        if (!senhaRegex.test(value)) {
+          setSenhaError(true);
+        } else {
+          setSenhaError(false);
+        }
+      };
+   
 
 
     return (
@@ -56,22 +84,32 @@ function Cadastro() {
                         />
                         </S.Group>
                         <S.Group>
+
                         <label htmlFor="">Email</label>
                         <input
                             name="email"
                             onInput={inputSemEspaco}
-                            className={errors.email ? "classdeErro" : "classeNormal"}
+                            className={errors.email || emailError ? "classdeErro" : "classeNormal"}
                             {...register('email', { required: true, pattern: /^\S+@\S+$/i })}
+                            
                         />
+                         {emailError && <span className="error-message">O email deve conter um '@'.</span>}
+
+                        
+
                         </S.Group>
                         <S.Group>
                         <label htmlFor="">Senha</label>
                         <input
                             name="senha"
+                            onInput={insenha}
                             type="password"
-                            className={errors.senha ? "classdeErro" : "classeNormal"}
-                            {...register('senha', { required: true, minLength: 8 })}
+                            className={errors.senha || senhaError ? "classdeErro" : "classeNormal"}
+                            {...register('senha', { required: true, pattern:  /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+                                message: "A senha deve ter pelo menos 8 caracteres, uma letra maiúscula, uma letra minúscula, um dígito e um caractere especial"})}
                         />
+                        {senhaError && <span className="error-message">minimo de 8 caracteres, letras maiusculas, numeros e caracteres especiais</span>}
+
                         </S.Group>
                         <S.Group>
                         <label htmlFor="">Confirmar senha</label>
