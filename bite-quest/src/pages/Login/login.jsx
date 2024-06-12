@@ -37,7 +37,7 @@ function Login() {
                 localStorage.setItem('token', token);
                 console.log('Usuário autenticado');
                 // Redirecionar para a página inicial
-                navigate("/CadastroRestaurante");
+                navigate("/Busca");
             } else {
                 console.log('Credenciais inválidas');
             }

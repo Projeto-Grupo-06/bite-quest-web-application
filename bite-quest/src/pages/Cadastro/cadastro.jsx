@@ -34,7 +34,7 @@ function Cadastro() {
                 }
             })
             .catch((error) => {
-                alert('Erro ao fazer login:', error.response.data);
+                alert('Erro ao fazer cadastro:', error.response.data);
             });
     };
 
